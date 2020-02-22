@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/extra_large_spacer"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginBottom="@dimen/medium_spacer"
+            android:id="@+id/header_text"
+            android:text="@string/pin_label"
+            android:fontFamily="@font/manrope"
+            android:textSize="@dimen/heading_size"
+            android:textColor="@color/dark"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginBottom="@dimen/extra_large_spacer"
+            android:id="@+id/explanation_text"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope"
+            android:textSize="@dimen/subsubheading_size"
+            android:textAlignment="center"
+            android:text="@string/scan_explanation_label" />
+        <EditText
+            android:textCursorDrawable="@null"
+            android:textColor="@color/darkGray"
+            android:fontFamily="@font/manrope"
+            android:maxLength="6"
+            android:letterSpacing="0.4"
+            android:textAlignment="center"
+            android:inputType="numberPassword"
+            android:textSize="@dimen/heading_size"
+            android:layout_marginBottom="@dimen/large_spacer"
+            android:background="@color/darkTransparent"
+            android:id="@+id/pin_code"
+            android:padding="@dimen/small_spacer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:paddingHorizontal="@dimen/large_spacer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pin_back_btn"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/small_spacer"
+                android:text="@string/back_label"
+                android:textColor="@color/colorPrimary"
+                app:icon="@drawable/ic_arrow_back_black_24dp"
+                app:iconTint="@color/colorPrimary"
+                android:layout_height="wrap_content" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pin_confirm_btn"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:icon="@drawable/ic_check_black_24dp"
+                app:iconTint="@color/success"
+                android:padding="@dimen/small_spacer"
+                android:textColor="@color/success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm_label" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="heading_size">36sp</dimen>
+    <dimen name="subheading_size">24sp</dimen>
+    <dimen name="subsubheading_size">18sp</dimen>
+    <dimen name="small_spacer">8dp</dimen>
+    <dimen name="medium_spacer">16dp</dimen>
+    <dimen name="large_spacer">24dp</dimen>
+    <dimen name="extra_large_spacer">32dp</dimen>
+    <dimen name="huge_spacer">36dp</dimen>
+</resources>

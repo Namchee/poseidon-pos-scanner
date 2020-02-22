@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="6"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:padding="@dimen/huge_spacer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+        <TextView
+            android:id="@+id/heading_banner"
+            android:textAlignment="center"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope"
+            android:layout_marginBottom="@dimen/large_spacer"
+            android:textSize="@dimen/heading_size"
+            android:textColor="@color/dark"
+            android:text="@string/welcome_banner" />
+        <TextView
+            android:textSize="@dimen/subsubheading_size"
+            android:textAlignment="center"
+            android:fontFamily="@font/manrope"
+            android:layout_below="@id/heading_banner"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/explain_banner"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="4"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/scan_btn"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Button"
+            android:text="@string/scan_label" />
+    </RelativeLayout>
+</LinearLayout>

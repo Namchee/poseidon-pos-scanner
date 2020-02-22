@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PoseidonScanner</string>
+    <string name="scan_label">Scan QR Code</string>
+    <string name="welcome_banner">Welcome to Poseidon PoS Scanner App</string>
+    <string name="explain_banner">This app is just a way to simulate a real PoS terminal QR code scanner.\nIt is not meant for production purposes!</string>
+    <string name="confirm_label">Confirm</string>
+    <string name="rescan_label">Re-Scan</string>
+    <string name="pin_label">Confirm PIN</string>
+    <string name="scan_result_label">QR Code Scan Result</string>
+    <string name="scan_explanation_label">To confirm your identity, please input PIN for this credit card</string>
+    <string name="back_label">Back</string>
+</resources>
