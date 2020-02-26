@@ -76,6 +76,7 @@
                     android:layout_weight="1" />
             </LinearLayout>
             <com.google.android.material.button.MaterialButton
+                app:rippleColor="@color/colorPrimaryTransparent"
                 android:id="@+id/scan_back_btn"
                 android:padding="@dimen/small_spacer"
                 style="@style/Widget.MaterialComponents.Button.TextButton"

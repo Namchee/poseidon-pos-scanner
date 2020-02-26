@@ -8,4 +8,5 @@
     <color name="success">#48C774</color>
     <color name="danger">#E53E3E</color>
     <color name="darkTransparent">#20363636</color>
+    <color name="colorPrimaryTransparent">#AA039be5</color>
 </resources>
