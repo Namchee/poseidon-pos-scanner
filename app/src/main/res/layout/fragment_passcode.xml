@@ -65,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
             <com.google.android.material.button.MaterialButton
+                app:rippleColor="@color/successTransparent"
                 android:id="@+id/pin_confirm_btn"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 app:icon="@drawable/ic_check_black_24dp"

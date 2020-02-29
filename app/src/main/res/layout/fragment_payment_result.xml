@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <ImageView
+                android:id="@+id/result_image"
+                android:layout_gravity="center"
+                android:layout_width="125dp"
+                android:layout_height="125dp" />
+            <TextView
+                android:id="@+id/result_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_spacer"
+                android:fontFamily="@font/manrope"
+                android:textSize="@dimen/subheading_size" />
+            <TextView
+                android:fontFamily="@font/manrope"
+                android:textSize="@dimen/subsubheading_size"
+                android:layout_marginBottom="@dimen/medium_spacer"
+                android:id="@+id/error_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/home_btn"
+                android:text="@string/home_label"
+                android:textColor="@color/colorPrimary"
+                app:iconTint="@color/colorPrimary"
+                app:icon="@drawable/ic_home_black_24dp"
+                android:padding="@dimen/small_spacer"
+                android:layout_gravity="center"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@android:color/white"
+        android:id="@+id/progress_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_centerInParent="true"
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:indeterminateTint="@color/colorPrimary" />
+    </RelativeLayout>
+</RelativeLayout>

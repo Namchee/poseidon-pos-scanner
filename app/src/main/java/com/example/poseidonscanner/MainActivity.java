@@ -11,9 +11,11 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import com.example.poseidonscanner.fragments.PasscodeFragment;
+import com.example.poseidonscanner.fragments.PaymentResultFragment;
 import com.example.poseidonscanner.fragments.ScanResultFragment;
 import com.example.poseidonscanner.fragments.SplashFragment;
 import com.example.poseidonscanner.interfaces.Controller;
+import com.example.poseidonscanner.model.HTTPResponse;
 import com.example.poseidonscanner.model.State;
 
 public class MainActivity extends AppCompatActivity implements Controller {
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements Controller {
     public static final int SPLASH_PAGE = 10;
     public static final int SCAN_RESULT_PAGE = 11;
     public static final int PIN_PAGE = 12;
+    public static final int PAYMENT_RESULT_PAGE = 13;
 
     public static final int SCANNER_ACTIVITY = 20;
 
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements Controller {
     SplashFragment splashFragment;
     ScanResultFragment scanResultFragment;
     PasscodeFragment passcodeFragment;
+    PaymentResultFragment paymentResultFragment;
 
     FragmentManager fm;
 
@@ -62,6 +66,10 @@ public class MainActivity extends AppCompatActivity implements Controller {
                 ft.replace(R.id.fragment_container, this.passcodeFragment);
                 break;
             }
+            case PAYMENT_RESULT_PAGE: {
+                ft.replace(R.id.fragment_container, this.paymentResultFragment);
+                break;
+            }
         }
 
         ft.addToBackStack(null);
@@ -75,10 +83,12 @@ public class MainActivity extends AppCompatActivity implements Controller {
         this.splashFragment = new SplashFragment();
         this.scanResultFragment = new ScanResultFragment();
         this.passcodeFragment = new PasscodeFragment();
+        this.paymentResultFragment = new PaymentResultFragment();
 
         ft.add(R.id.fragment_container, this.splashFragment);
         ft.add(R.id.fragment_container, this.scanResultFragment);
         ft.add(R.id.fragment_container, this.passcodeFragment);
+        ft.add(R.id.fragment_container, this.paymentResultFragment);
 
         ft.replace(R.id.fragment_container, this.splashFragment);
 
@@ -100,6 +110,10 @@ public class MainActivity extends AppCompatActivity implements Controller {
                 this.changePage(SCAN_RESULT_PAGE);
             }
         }
+    }
+
+    public void notifyPaymentResult(HTTPResponse paymentResult) {
+        this.paymentResultFragment.showPaymentResult(paymentResult);
     }
 
     @Override

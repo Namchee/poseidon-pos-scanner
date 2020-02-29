@@ -9,4 +9,8 @@
     <string name="scan_result_label">QR Code Scan Result</string>
     <string name="scan_explanation_label">To confirm your identity, please input PIN for this credit card</string>
     <string name="back_label">Back</string>
+
+    <string name="payment_success_label">Payment Successful</string>
+    <string name="payment_error_label">Payment Failed</string>
+    <string name="home_label">Home</string>
 </resources>
