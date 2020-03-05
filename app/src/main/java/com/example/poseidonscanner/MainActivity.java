@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements Controller {
 
     public static final int SCANNER_ACTIVITY = 20;
 
-    public static final String URL = "http://fa55695f.ngrok.io/poi-app";
+    public static final String URL = "https://poseidon-poi-app.herokuapp.com/poi-app";
 
     public final State appState = new State();
 
