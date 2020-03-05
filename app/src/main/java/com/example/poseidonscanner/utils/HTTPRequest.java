@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
@@ -43,9 +44,8 @@ public class HTTPRequest {
                 (JSONObject response) -> {
                     try {
                         boolean data = response.getBoolean("data");
-                        String error = response.getString("error");
 
-                        HTTPResponse resp = new HTTPResponse(data, error);
+                        HTTPResponse resp = new HTTPResponse(data, null);
 
                         this.activity.notifyPaymentResult(resp);
                     } catch (JSONException e) {
@@ -53,13 +53,24 @@ public class HTTPRequest {
                     }
                 },
                 (VolleyError err) -> {
-                    if (err.networkResponse.statusCode == 500) {
-                        HTTPResponse resp = new HTTPResponse(false, "Cannot connect to POI APP");
-                        this.activity.notifyPaymentResult(resp);
+                    try {
+                        NetworkResponse networkResponse = err.networkResponse;
 
-                    } else {
-                        HTTPResponse resp = new HTTPResponse(false, err.networkResponse.data.toString());
-                        this.activity.notifyPaymentResult(resp);
+                        if (networkResponse != null && networkResponse.data != null) {
+                            String respString = new String(networkResponse.data);
+
+                            JSONObject obj = new JSONObject(respString);
+
+                            HTTPResponse httpResponse = new HTTPResponse(false, obj.getString("error"));
+
+                            this.activity.notifyPaymentResult(httpResponse);
+                        } else {
+                            HTTPResponse httpResponse = new HTTPResponse(false, "Cannot connect to POI App");
+
+                            this.activity.notifyPaymentResult(httpResponse);
+                        }
+                    } catch (JSONException e) {
+                        System.err.println(e);
                     }
                 }
             ) {

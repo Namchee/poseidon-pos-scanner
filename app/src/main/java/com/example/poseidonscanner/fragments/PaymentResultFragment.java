@@ -81,6 +81,8 @@ public class PaymentResultFragment extends Fragment implements View.OnClickListe
     public void showPaymentResult(HTTPResponse response) {
         this.loader.setVisibility(View.GONE);
 
+        System.out.println(response.isSuccess());
+
         if (response.isSuccess()) {
             this.resultImage.setImageDrawable(this.getContext().getDrawable(R.drawable.ic_check_circle_black_24dp));
             this.resultImage.setColorFilter(this.getContext().getColor(R.color.success));

@@ -14,6 +14,6 @@ public class HTTPResponse {
     }
 
     public boolean isSuccess() {
-        return data && this.error.isEmpty();
+        return data && this.error == null;
     }
 }
