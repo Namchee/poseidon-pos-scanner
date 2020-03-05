@@ -96,7 +96,14 @@ public class PasscodeFragment extends Fragment implements View.OnClickListener {
 
         PoseidonRequest request = new PoseidonRequest(this.controller.getCurrentState().getQRResult(), this.pin.getText().toString());
 
-        HTTPRequest.getInstance(this.getActivity()).sendRequest("http://localhost:8080", header, request.getJSONObject());
+        HTTPRequest.getInstance(this.getActivity()).sendRequest(MainActivity.URL, header, request.getJSONObject());
         this.controller.changePage(MainActivity.PAYMENT_RESULT_PAGE);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        this.pin.setText("");
     }
 }

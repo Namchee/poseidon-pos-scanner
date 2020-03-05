@@ -12,18 +12,23 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true">
             <ImageView
+                android:layout_marginBottom="@dimen/large_spacer"
                 android:id="@+id/result_image"
                 android:layout_gravity="center"
                 android:layout_width="125dp"
                 android:layout_height="125dp" />
             <TextView
+                android:layout_gravity="center"
+                android:textAlignment="center"
                 android:id="@+id/result_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/small_spacer"
+                android:layout_marginBottom="@dimen/medium_spacer"
                 android:fontFamily="@font/manrope"
                 android:textSize="@dimen/subheading_size" />
             <TextView
+                android:layout_gravity="center"
+                android:textAlignment="center"
                 android:fontFamily="@font/manrope"
                 android:textSize="@dimen/subsubheading_size"
                 android:layout_marginBottom="@dimen/medium_spacer"
@@ -31,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <com.google.android.material.button.MaterialButton
+                app:rippleColor="@color/colorPrimary"
                 android:id="@+id/home_btn"
                 android:text="@string/home_label"
                 android:textColor="@color/colorPrimary"

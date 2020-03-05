@@ -53,7 +53,14 @@ public class HTTPRequest {
                     }
                 },
                 (VolleyError err) -> {
-                    System.err.println(err);
+                    if (err.networkResponse.statusCode == 500) {
+                        HTTPResponse resp = new HTTPResponse(false, "Cannot connect to POI APP");
+                        this.activity.notifyPaymentResult(resp);
+
+                    } else {
+                        HTTPResponse resp = new HTTPResponse(false, err.networkResponse.data.toString());
+                        this.activity.notifyPaymentResult(resp);
+                    }
                 }
             ) {
             @Override
